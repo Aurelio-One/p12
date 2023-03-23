@@ -1,0 +1,36 @@
+.header {
+    background-color: var(-color-2);
+  }
+  
+  .header-icons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header-icon {
+    cursor: pointer;
+    align-self: center;
+  }
+  
+  .header-copyright {
+    color: var(--color-3);
+    transform: rotate(-90deg);
+    width: 191px;
+    place-self: center;
+  }
+  
+  .header-vertical {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+  }
+  
+  .side {
+    width: 117px;
+    height: 876px;
+  }
+  
