@@ -1,0 +1,44 @@
+.main-container .profile {
+  padding-top: 50px;
+}
+
+.main-container .profile h1 {
+  margin-bottom: 20px;
+  font-size: 48px;
+  font-weight: 500;
+  color: var(--color-4);
+}
+
+@media screen and (min-width: 992px) {
+  .main-container .profile h1 {
+    font-size: 44px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .main-container .profile h1 {
+    font-size: 40px;
+  }
+}
+
+.main-container .profile p {
+  padding-bottom: 30px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.main-container .container {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  padding-bottom: 30px;
+}
+
+@media screen and (max-width: 991px) {
+  .main-container .container {
+    gap: 30px;
+  }
+  .main-container .profile {
+    padding-top: 20px;
+  }
+}
