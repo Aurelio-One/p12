@@ -1,24 +1,20 @@
+.main-container {
+  display: flex;
+}
+
 .main-container .profile {
   padding-top: 50px;
 }
 
 .main-container .profile h1 {
   margin-bottom: 20px;
+  margin-top: 0;
   font-size: 48px;
   font-weight: 500;
+}
+
+.main-container .profile h1 span {
   color: var(--color-4);
-}
-
-@media screen and (min-width: 992px) {
-  .main-container .profile h1 {
-    font-size: 44px;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .main-container .profile h1 {
-    font-size: 40px;
-  }
 }
 
 .main-container .profile p {
@@ -28,17 +24,54 @@
 }
 
 .main-container .container {
-  display: flex;
-  flex-direction: row;
-  gap: 100px;
-  padding-bottom: 30px;
+  width: 100%;
+  padding: 0 100px 30px;
 }
 
-@media screen and (max-width: 991px) {
+.main-container .activity h3 {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.main-container .container .container-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.main-container .container .container-chart .cards-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 30px;
+}
+
+.main-container .container .container-stats {
+  display: flex;
+  column-gap: 30px;
+}
+
+.main-container .container .container-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media screen and (max-width: 1300px) {
   .main-container .container {
-    gap: 30px;
+    padding: 0 20px;
   }
-  .main-container .profile {
-    padding-top: 20px;
+
+  .main-container .container .container-stats {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+  .main-container .container .container-information {
+    flex-direction: row;
+    column-gap: 20px;
+  }
+  .main-container .container .container-information .information {
+    width: 100%;
   }
 }

@@ -1,0 +1,32 @@
+.information {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 5px;
+    background: #fbfbfb;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+    gap: 25px;
+    height: 124px;
+  }
+  
+  .information > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .information .info-value {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  .information .info-title {
+    color: var(--color-8);
+    font-size: 14px;
+  }
+  
+  .information svg {
+    width: 60px;
+    height: 60px;
+  }
+  

@@ -14,7 +14,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 15px;
   }
   
   .header-list {

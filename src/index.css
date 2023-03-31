@@ -10,19 +10,15 @@
   --color-6: #282d30;
   --color-7: #e60000;
   --color-8: #74798c;
-  --breakpoin-tablet-max: 768px;
-  --breakpoin-laptop-max: 1440px;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: auto;
   font-family: 'Roboto', sans-serif;
-}
-
-main {
-  display: flex;
-  -moz-column-gap: 2rem;
-  column-gap: 2rem;
 }
 
 a {
