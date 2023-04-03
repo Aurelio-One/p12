@@ -53,7 +53,7 @@ function Activity({ data }) {
           barGap={8}
         >
           <YAxis
-            tickCount={3}
+            tickCount={6}
             orientation='right'
             tickLine={false}
             axisLine={false}
@@ -61,7 +61,6 @@ function Activity({ data }) {
           <XAxis
             dataKey='day'
             dy={16}
-            fontSize={14}
             tickLine={false}
           />
           <Tooltip content={<CustomTooltip />} />

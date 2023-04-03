@@ -27,4 +27,6 @@
 
 .side {
   width: 117px;
+  position: fixed;
+  height: 100vh;
 }
