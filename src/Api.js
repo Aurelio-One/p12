@@ -1,25 +1,22 @@
-import mockedData from './data/mockedData'
+import axios from 'axios'
 
-export async function getUserData(id) {
+export async function getUserData(userId) {
+  const url = 'http://localhost:3000/user/'
+  try {
+    const user = await axios.get(url + userId).then((res) => res.data.data)
+    const activity = await axios
+      .get(url + userId + '/activity')
+      .then((res) => res.data.data)
+    const averageSessions = await axios
+      .get(url + userId + '/average-sessions')
+      .then((res) => res.data.data)
+    const performance = await axios
+      .get(url + userId + '/performance')
+      .then((res) => res.data.data)
 
-  const userId = parseInt(id);
-
-  const user = mockedData.USER_MAIN_DATA.filter(
-    (user) => user.id === userId
-  ).shift();
-  const activity = mockedData.USER_ACTIVITY.filter(
-    (userActivity) => userActivity.userId === userId
-  ).shift();
-  const averageSessions = mockedData.USER_AVERAGE_SESSIONS.filter(
-    (userActivity) => userActivity.userId === userId
-  ).shift();
-  const performance = mockedData.USER_PERFORMANCE.filter(
-    (userPerformance) => userPerformance.userId === userId
-  ).shift();
-  console.log(
-    'Trying to use mocked data: ',
-    mockedData.USER_MAIN_DATA.filter((e) => e.id === userId)
-  );
-
-  return { user, activity, averageSessions, performance };
+    return { user, activity, averageSessions, performance }
+  } catch (error) {
+    console.log('Fetching data failed: ', error)
+  }
 }
+
