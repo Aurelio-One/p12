@@ -9,9 +9,15 @@ import {
 import PropTypes from 'prop-types'
 import './Performance.css'
 
+/**
+ * Performance component displaying a radar chart of user's performance data
+ * @param {object} data - performance data object
+ * @returns {JSX.Element} - performance radar chart JSX element
+ */
 function Performance({ data }) {
   const model = new Models()
   const performances = model.FormatPerformance(data)
+
   return (
     <div className='radarChart'>
       <ResponsiveContainer
@@ -19,7 +25,7 @@ function Performance({ data }) {
         height={263}
       >
         <RadarChart
-          data={performances.reverse()}
+          data={performances.reverse()} // Reverse data array for correct display order
           outerRadius={90}
           className='radar-chart'
         >

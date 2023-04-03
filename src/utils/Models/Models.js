@@ -1,4 +1,12 @@
+/**
+ * Models class for formatting data
+ */
 export default class Models {
+  /**
+   * Format sessions data
+   * @param {Object} data - Sessions data
+   * @return {Array} - Formatted sessions data
+   */
   FormatSessions(data) {
     const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
     return data.sessions.map((s, i) => ({
@@ -6,6 +14,12 @@ export default class Models {
       letter: days[i],
     }))
   }
+
+  /**
+   * Format activity data
+   * @param {Object} data - Activity data
+   * @return {Array} - Formatted activity data
+   */
   FormatActivity(data) {
     return data.sessions.map((e, i) => ({
       day: i + 1,
@@ -14,6 +28,12 @@ export default class Models {
       cal: e.calories,
     }))
   }
+
+  /**
+   * Format score data
+   * @param {number} data - User's score data
+   * @return {Array} - Formatted score data
+   */
   FormatScore(data) {
     return [
       {
@@ -23,11 +43,17 @@ export default class Models {
         opacity: '0%',
       },
       {
-        name: 'de votre objectif',
+        name: 'of your objective',
         score: data * 100,
       },
     ]
   }
+
+  /**
+   * Format performance data
+   * @param {Object} data - Performance data
+   * @return {Array} - Formatted performance data
+   */
   FormatPerformance(data) {
     const frenchLabel = {
       intensity: 'Intensité',

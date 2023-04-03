@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getUserData } from '../../Api'
-
 import NotFound from '../../pages/NotFound/NotFound'
-
 import Header from '../../components/Header/Header'
 import SideBar from '../../components/SideBar/SideBar'
 import Activity from '../../components/Activity/Activity'
@@ -12,25 +10,41 @@ import SessionsDuration from '../../components/SessionsDuration/SessionsDuration
 import Performance from '../../components/Performance/Performance'
 import Score from '../../components/Score/Score'
 import Loading from '../Loading/Loading'
-
 import './Dashboard.css'
 
-const Dashboard = () => {
+/**
+ * Renders the dashboard page.
+ *
+ * @returns {JSX.Element} Dashboard page.
+ */
+function Dashboard() {
   const [userData, setUserData] = useState(null)
   const [pageState, setPageState] = useState('Loading')
 
+  /**
+   * Handles errors when getting user data.
+   *
+   * @param {Error} err Error object.
+   */
   const errorHandle = (err) => {
     console.log('Error : ', err)
     setPageState('NotFound')
   }
+
+  /**
+   * Handles successful response when getting user data.
+   *
+   * @param {Object} res User data.
+   */
   const resHandle = (res) => {
     if (res.user === undefined) {
-      return errorHandle('User  not found')
+      return errorHandle('User not found')
     } else {
       setUserData(res)
       setPageState('Success')
     }
   }
+
   const { userId } = useParams()
 
   useEffect(() => {

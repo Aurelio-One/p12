@@ -1,9 +1,16 @@
+import PropTypes from 'prop-types'
 import CaloriesIcon from '../../assets/img/calories-icon.svg'
 import ProteinIcon from '../../assets/img/protein-icon.svg'
 import CarbsIcon from '../../assets/img/carbs-icon.svg'
 import FatIcon from '../../assets/img/fat-icon.svg'
 import './Info.css'
 
+/**
+ * Info component displaying a nutrition information box
+ * @param {string} type - type of nutrition information to display (calories, protein, carbs, fat)
+ * @param {object} data - object containing nutrition data
+ * @returns {JSX.Element} - nutrition information box JSX element
+ */
 function Info({ type, data }) {
   const values = {
     Calories: data.calorieCount,
@@ -47,6 +54,16 @@ function Info({ type, data }) {
       </div>
     </div>
   )
+}
+
+Info.propTypes = {
+  type: PropTypes.string.isRequired,
+  data: PropTypes.shape({
+    calorieCount: PropTypes.number.isRequired,
+    carbohydrateCount: PropTypes.number.isRequired,
+    proteinCount: PropTypes.number.isRequired,
+    lipidCount: PropTypes.number.isRequired,
+  }).isRequired,
 }
 
 export default Info

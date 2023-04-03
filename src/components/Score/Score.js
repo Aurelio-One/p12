@@ -8,9 +8,15 @@ import {
 import PropTypes from 'prop-types'
 import './Score.css'
 
+/**
+ * Score component displaying the user's score towards their goal
+ * @param {object} data - score data object
+ * @returns {JSX.Element} - score radial bar chart JSX element
+ */
 function Score({ data }) {
   const model = new Models()
   const dataChart = model.FormatScore(data)
+
   return (
     <div className='score'>
       <header className='score-header'>

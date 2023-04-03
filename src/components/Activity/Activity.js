@@ -1,3 +1,4 @@
+// Import necessary modules
 import Models from '../../utils/Models/Models'
 
 import {
@@ -14,19 +15,15 @@ import PropTypes from 'prop-types'
 import { ReactComponent as Oval } from '../../assets/img/Oval.svg'
 import './Activity.css'
 
+/**
+ * Activity component displaying daily activity chart
+ * @param {object} data - activity data object
+ * @returns {JSX.Element} - activity chart JSX element
+ */
 function Activity({ data }) {
   const model = new Models()
   const dataChart = model.FormatActivity(data)
-  const CustomTooltip = ({ active, payload }) => {
-    if (active && payload && payload.length) {
-      return (
-        <div className='tooltip'>
-          <p>{`${payload[0].value}kg`}</p>
-          <p>{`${payload[1].value}kcal`}</p>
-        </div>
-      )
-    }
-  }
+
   return (
     <div className='activity'>
       <header className='card-header'>
@@ -90,6 +87,25 @@ function Activity({ data }) {
       </ResponsiveContainer>
     </div>
   )
+}
+
+/**
+ * Custom tooltip component for activity chart
+ * @param {object} props - component props
+ * @param {boolean} props.active - whether tooltip is active or not
+ * @param {object[]} props.payload - array of data items to display in tooltip
+ * @returns {JSX.Element|null} - tooltip JSX element or null
+ */
+const CustomTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className='tooltip'>
+        <p>{`${payload[0].value}kg`}</p>
+        <p>{`${payload[1].value}kcal`}</p>
+      </div>
+    )
+  }
+  return null
 }
 
 Activity.propTypes = {

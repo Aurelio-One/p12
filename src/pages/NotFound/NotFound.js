@@ -1,6 +1,10 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom"
 import './NotFound.css'
 
+/**
+ * Represents a page for displaying a "not found" error message.
+ * @returns {JSX.Element} JSX element containing the error message and a link to the home page.
+ */
 function NotFound() {
   return (
     <div className='error'>

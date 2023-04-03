@@ -1,11 +1,15 @@
-import './Loading.css';
+import './Loading.css'
 
-const Loading = () => {
+/**
+ * Renders a loading spinner.
+ * @returns {JSX.Element} Loading component
+ */
+function Loading() {
   return (
-    <div className="loading">
-      <div className="loading-spinner"></div>
+    <div className='loading'>
+      <div className='loading-spinner'></div>
     </div>
-  );
-};
+  )
+}
 
-export default Loading;
+export default Loading

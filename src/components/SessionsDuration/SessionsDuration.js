@@ -11,11 +11,21 @@ import PropTypes from 'prop-types'
 import Models from '../../utils/Models/Models'
 import './SessionsDuration.css'
 
-
+/**
+ * SessionsDuration component displaying the user's average session duration over time
+ * @param {object} data - sessions data object
+ * @returns {JSX.Element} - session duration line chart JSX element
+ */
 function SessionsDuration({ data }) {
   const model = new Models()
   const sessions = model.FormatSessions(data)
 
+  /**
+   * CustomTooltip component displaying the session duration when hovering over the chart
+   * @param {boolean} active - whether the tooltip is active or not
+   * @param {object[]} payload - array of data payload from the chart
+   * @returns {JSX.Element|null} - tooltip JSX element or null
+   */
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
@@ -28,7 +38,11 @@ function SessionsDuration({ data }) {
     return null
   }
 
-  //Custom cursor
+  /**
+   * CustomizedCursor component displaying a cursor on the chart
+   * @param {object[]} points - array of points on the chart
+   * @returns {JSX.Element} - cursor JSX element
+   */
   function CustomizedCursor({ points }) {
     return (
       <Rectangle
@@ -40,6 +54,7 @@ function SessionsDuration({ data }) {
       />
     )
   }
+
   return (
     <div className='duration-session'>
       <header className='durationSessions-header'>
@@ -90,7 +105,6 @@ function SessionsDuration({ data }) {
             hide={true}
             domain={['dataMin -15', 'dataMax + 45']}
           />
-
           <XAxis
             dataKey='letter'
             stroke='rgba(255, 255, 255, 0.6)'
