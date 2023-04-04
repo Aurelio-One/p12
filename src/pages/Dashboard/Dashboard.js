@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { getUserData } from '../../Api'
+import { getUserData } from '../../utils/Api/Api'
 import NotFound from '../../pages/NotFound/NotFound'
 import Header from '../../components/Header/Header'
 import SideBar from '../../components/SideBar/SideBar'
