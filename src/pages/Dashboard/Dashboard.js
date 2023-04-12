@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { getUserData } from '../../utils/Api/Api'
+import { fetchUserData } from '../../utils/Api/Api'
 import NotFound from '../../pages/NotFound/NotFound'
 import Header from '../../components/Header/Header'
 import SideBar from '../../components/SideBar/SideBar'
@@ -48,7 +48,7 @@ function Dashboard() {
   const { userId } = useParams()
 
   useEffect(() => {
-    getUserData(userId)
+    fetchUserData(userId)
       .then((res) => resHandle(res))
       .catch((err) => errorHandle(err))
   }, [])
